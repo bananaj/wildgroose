@@ -1,4 +1,4 @@
 wildgroose
 ==========
 
-Groovy Web Controller
+Groovy Web Controller - based on groovlets  / GroovyServlet
