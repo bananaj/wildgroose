@@ -37,11 +37,27 @@
             <artifactId>groovy-all</artifactId>
             <version>${groovy-all.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.1.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.1.0.RELEASE</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <modules>
         <module>wildgroose-wc</module>
         <module>example-wildgroose-simple-web</module>
+        <module>example-wildgroose-spring-web</module>
     </modules>
 
 </project>

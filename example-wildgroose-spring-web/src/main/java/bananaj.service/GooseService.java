@@ -1,6 +1,17 @@
-package bananamj.service;
+package bananaj.service;
 
 import javax.inject.Named;
 
 @Named
-publ
+public class GooseService {
+
+    public GooseService() {
+    }
+
+    public String getHonk() {
+        String returnValue = "GooseService: Honked";
+        System.out.println(returnValue);
+        return returnValue;
+    }
+
+}

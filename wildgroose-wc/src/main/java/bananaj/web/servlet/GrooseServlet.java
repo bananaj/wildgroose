@@ -2,8 +2,11 @@ package bananaj.web.servlet;
 
 import groovy.lang.GroovyClassLoader;
 import groovy.servlet.GroovyServlet;
+import groovy.servlet.ServletBinding;
 import groovy.util.GroovyScriptEngine;
 import org.apache.commons.io.FileUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,10 +16,10 @@ import java.util.Collection;
 
 public class GrooseServlet extends GroovyServlet {
 
+
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        compileClasses();
     }
 
     @Override
@@ -43,25 +46,5 @@ public class GrooseServlet extends GroovyServlet {
         return returnValue;
     }
 
-    public void compileClasses() {
 
-        Collection<File> files = FileUtils.listFiles(new File("groovy/classes"), new String[]{"groovy"}, true);
-
-        ClassLoader parent = getClass().getClassLoader();
-        GroovyClassLoader loader = new GroovyClassLoader(parent);
-        for(File file: files) {
-
-
-            try {
-                Class groovyClass = loader.parseClass(file);
-                System.out.println("compiled file: " + file);
-
-            }
-            catch(Exception e) {
-
-                e.printStackTrace();
-            }
-
-        }
-    }
 }
