@@ -30,9 +30,6 @@ public class GrooseSpringServlet extends GrooseServlet {
 
     @Override
     protected void setVariables(ServletBinding binding) {
-        for (String name: applicationContext.getBeanDefinitionNames()) {
-            binding.setVariable(name, applicationContext.getBean(name));
-            System.out.println("Set name: " + name + " " + applicationContext.getBean(name));
-        }
+        binding.setVariable("applicationContext", applicationContext);
     }
 }
