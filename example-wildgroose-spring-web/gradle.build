@@ -1,0 +1,21 @@
+group = 'bananaj.wildgroose'
+version = '1.0'
+
+apply plugin: 'java'
+apply plugin: 'jetty'
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile "bananaj:wildgroose-wc:0.1-SNAPSHOT"
+    compile "javax.inject:javax.inject:1"
+
+}
+
+
+
+jettyRun{
+     contextPath = 'demo'
+}
